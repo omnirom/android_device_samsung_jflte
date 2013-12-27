@@ -15,5 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_jfltexx.mk
+    $(LOCAL_DIR)/full_jfltexx.mk \
+    $(LOCAL_DIR)/nameless_jfltexx.mk
 
