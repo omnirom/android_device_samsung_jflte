@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # Get the prebuilt list of APNs
-$(call inherit-product, vendor/nameless/config/gsm.mk)
+$(call inherit-product, vendor/nameless/config/apns.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -23,8 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/nameless/config/common.mk)
 
-# This is where we'd set a backup provider if we had one
-#$(call inherit-product, device/sample/products/backup_overlay.mk)
+# Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/samsung/jfltexx/device.mk)
 
 # Discard inherited values and use our own instead.
@@ -33,3 +32,6 @@ PRODUCT_DEVICE := jfltexx
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-I9505
+
+# Inherit the SIM Toolkit
+PRODUCT_PACKAGES += Stk
