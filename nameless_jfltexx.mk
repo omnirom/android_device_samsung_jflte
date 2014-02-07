@@ -14,15 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/nameless/config/apns.mk)
-
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/nameless/config/common.mk)
-
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/samsung/jfltexx/device.mk)
 
