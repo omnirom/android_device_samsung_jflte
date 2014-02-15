@@ -1,0 +1,19 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+/dev/block/platform/msm_sdcc.1/by-name/system      /system              ext4    ro,barrier=1,errors=panic                                                   wait
+/dev/block/platform/msm_sdcc.1/by-name/cache       /cache               ext4    noatime,nosuid,nodev,journal_async_commit                                   wait,check
+/dev/block/platform/msm_sdcc.1/by-name/userdata    /data                ext4    noatime,nosuid,nodev,journal_async_commit,noauto_da_alloc,errors=panic      wait,check,encryptable=footer,length=-16384
+
+# radio (dont delete again! we need this for baseband)
+/dev/block/platform/msm_sdcc.1/by-name/apnhlos     /firmware            vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:radio_efs_file:s0  wait
+/dev/block/platform/msm_sdcc.1/by-name/mdm         /firmware-mdm        vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:radio_efs_file:s0  wait
+
+# recovery
+/dev/block/platform/msm_sdcc.1/by-name/boot        /boot                emmc    defaults                                                                    recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/recovery    /recovery            emmc    defaults                                                                    recoveryonly
+
+# vold managed volumes
+/devices/platform/msm_sdcc.2/mmc_host/mmc2         auto                 auto    defaults                                                                    voldmanaged=sdcard1:auto
+/devices/platform/msm_hsusb_host/usb               auto                 auto    defaults                                                                    voldmanaged=usbdisk:auto

@@ -20,14 +20,140 @@
 # definition file).
 #
 
-# inherit from common JF
--include device/samsung/jf-common/BoardConfigCommon.mk
+# inherit from common msm8960
+-include device/samsung/msm8960-common/BoardConfigCommon.mk
 
-# inherit from the proprietary version
--include vendor/samsung/jfltexx/BoardConfigVendor.mk
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/jflte/include
+
+# Kernel
+TARGET_KERNEL_SOURCE         := kernel/samsung/jf
+BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=31 zcache androidboot.selinux=permissive
+BOARD_KERNEL_BASE            := 0x80200000
+BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
+BOARD_KERNEL_PAGESIZE        := 2048
+TARGET_KERNEL_VARIANT_CONFIG := custom_jf_defconfig
+TARGET_KERNEL_SELINUX_CONFIG := jfselinux_defconfig
+
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
+
+# WiFi module
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
+WIFI_DRIVER_MODULE_NAME := "dhd"
+
+# QCOM
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+
+# Adreno configuration
+BOARD_EGL_CFG := device/samsung/jflte/configs/egl.cfg
+
+# Recovery
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/jflte/recovery/recovery_keys.c
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+BOARD_USES_MMCUTILS := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_RECOVERY_SWIPE := true
+TARGET_RECOVERY_FSTAB := device/samsung/jflte/rootdir/etc/fstab.qcom
+
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
+BOARD_FLASH_BLOCK_SIZE := 131072
+
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/jflte/init/init_jflte.c
+
+# bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/jflte/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/jflte/bluetooth/vnd_jf.txt
+BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
+
+# Needed for blobs
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+
+# NFC
+BOARD_NFC_HAL_SUFFIX := msm8960
+
+# Disable initlogo, Samsungs framebuffer is weird
+TARGET_NO_INITLOGO := true
+
+# Use seperate speakerphone device
+BOARD_USES_SEPERATED_VOICE_SPEAKER := true
+
+# Use USB Dock Audio
+BOARD_HAVE_DOCK_USBAUDIO := true
+
+# Use the ES325 dual mic feature
+BOARD_HAVE_AUDIENCE_ES325_2MIC := true
+
+# Samsung's nonstandard csd-client
+BOARD_HAVE_SAMSUNG_CSDCLIENT := true
+
+# Use seperate devices for VOIP
+BOARD_USES_SEPERATED_VOIP := true
+
+# Use seperate devices for 3-pole headset
+BOARD_USES_SEPERATED_HEADSET_MIC := true
+
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
+
+# Camera
+TARGET_NEED_CAMERA_ZSL := true
+TARGET_NEED_SAMSUNG_MAGIC_ZSL_1508 := true
+TARGET_ADD_ISO_MODE_1600 := true
+TARGET_ADD_ISO_MODE_HJR := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505G
+TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505G,jfltevzw,jfltespr,jfltetmo,jfltecri,jflteatt,jfltecan,jflteusc,jfltezm
 
 # Kernel
 TARGET_KERNEL_CONFIG         := jf_eur_defconfig
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jflte/releasetools
+
+# exFat
+COMMON_GLOBAL_CFLAGS += -DEXFAT_KMOD
+
+# Additional Apps
+USE_TORCH := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+        device/samsung/jflte/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+	file_contexts \
+	property_contexts \
+	te_macros \
+	bluetooth_loader.te \
+	bridge.te \
+	camera.te \
+	conn_init.te \
+	device.te \
+	dhcp.te \
+	domain.te \
+	drmserver.te \
+	file.te \
+	init.te \
+	kickstart.te \
+	mediaserver.te \
+	netmgrd.te \
+	qmux.te \
+	rild.te \
+	rmt.te \
+	sensors.te \
+	surfaceflinger.te \
+	system.te \
+	tee.te \
+	thermald.te \
+	ueventd.te \
+	wpa_supplicant.te

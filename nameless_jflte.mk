@@ -24,14 +24,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/nameless/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/samsung/jfltexx/device.mk)
+$(call inherit-product, device/samsung/jflte/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := nameless_jfltexx
-PRODUCT_DEVICE := jfltexx
+PRODUCT_NAME := nameless_jflte
+PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-I9505
-
-# Inherit the SIM Toolkit
-PRODUCT_PACKAGES += Stk
