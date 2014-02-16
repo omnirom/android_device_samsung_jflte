@@ -31,6 +31,7 @@ BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=31 zcache a
 BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
+TARGET_KERNEL_CONFIG         := jf_eur_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := custom_jf_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := jfselinux_defconfig
 
@@ -115,17 +116,11 @@ TARGET_ADD_ISO_MODE_HJR := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505G,jfltevzw,jfltespr,jfltetmo,jfltecri,jflteatt,jfltecan,jflteusc,jfltezm
 
-# Kernel
-TARGET_KERNEL_CONFIG         := jf_eur_defconfig
-
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jflte/releasetools
 
 # exFat
 COMMON_GLOBAL_CFLAGS += -DEXFAT_KMOD
-
-# Additional Apps
-USE_TORCH := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
