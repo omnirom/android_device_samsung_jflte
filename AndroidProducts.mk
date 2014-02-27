@@ -16,5 +16,5 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/full_jflte.mk \
-    $(LOCAL_DIR)/nameless_jflte.mk
+    $(LOCAL_DIR)/omni_jflte.mk
 
