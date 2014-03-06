@@ -1,12 +1,6 @@
 [
   {
     "remote": "omnirom",
-    "repository": "android_device_qcom_common",
-    "target_path": "device/qcom/common",
-    "revision": "android-4.4"
-  },
-  {
-    "remote": "omnirom",
     "repository": "android_kernel_samsung_jf",
     "target_path": "kernel/samsung/jf",
     "revision": "android-4.4"
