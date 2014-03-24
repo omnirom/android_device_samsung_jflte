@@ -136,7 +136,7 @@ TARGET_ADD_ISO_MODE_1600 := true
 TARGET_ADD_ISO_MODE_HJR := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505G,jfltevzw,jfltespr,jfltetmo,jfltecri,jflteatt,jfltecan,jflteusc,jfltezm
+TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505G,jfltevzw,jfltespr,jfltetmo,jfltecri,jfltecsp,jflteatt,jfltecan,jflteusc,jfltezm
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jflte/releasetools
