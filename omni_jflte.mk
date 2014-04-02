@@ -15,20 +15,20 @@
 # limitations under the License.
 
 # Get the prebuilt list of APNs
-$(call inherit-product, vendor/nameless/config/apns.mk)
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/nameless/config/common.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/samsung/jflte/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := nameless_jflte
+PRODUCT_NAME := omni_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := GT-I9505
+PRODUCT_MODEL := jflte
