@@ -81,8 +81,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Torch
-PRODUCT_PACKAGES += Torch
+# OmniTorch
+PRODUCT_PACKAGES += OmniTorch
 
 # Wifi
 PRODUCT_PACKAGES += \
