@@ -76,6 +76,8 @@ void vendor_load_properties()
         property_set("ro.build.description", "jfltecri-user 4.2.2 JDQ39 R970CVVUAME4 release-keys");
         property_set("ro.product.model", "SCH-R970C");
         property_set("ro.product.device", "jfltecri");
+        property_set("ro.cdma.home.operator.alpha", "Cricket");
+        property_set("ro.cdma.home.operator.numeric", "310090");
     } else if (strstr(bootloader, "R970X")) {
         /* jfltecsp */
         cdma_properties("0", "8", "311230", "C Spire", "1");
@@ -104,6 +106,8 @@ void vendor_load_properties()
         property_set("ro.build.description", "jflteusc-user 4.2.2 JDQ39 R970VXUAMD9 release-keys");
         property_set("ro.product.model", "SCH-R970");
         property_set("ro.product.device", "jflteusc");
+        property_set("ro.cdma.home.operator.alpha", "U.S.Cellular");
+        property_set("ro.cdma.home.operator.numeric", "311580");
     } else if (strstr(bootloader, "I545")) {
         /* jfltevzw */
         cdma_properties("0", "10", "311480", "Verizon", "0");
