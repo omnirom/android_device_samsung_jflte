@@ -24,11 +24,18 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-# Inherit from jfltetmo device
+
+# Inherit from device.mk
 $(call inherit-product, device/samsung/jflte/device.mk)
 
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Inherit the APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_jflte
+PRODUCT_NAME := omni_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung

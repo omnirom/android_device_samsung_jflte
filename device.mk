@@ -81,8 +81,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Torch
-PRODUCT_PACKAGES += Torch
+# OmniTorch
+PRODUCT_PACKAGES += OmniTorch
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -138,11 +138,6 @@ PRODUCT_PACKAGES += qrngd
 
 # Prepatch to fix BT/WiFi bus lockups
 PRODUCT_COPY_FILES += device/samsung/jflte/bluetooth/bcm4335_prepatch.hcd:system/vendor/firmware/bcm4335_prepatch.hcd
-
-# enable repeatable keys in cwm
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.enable_key_repeat=true \
-    ro.cwm.repeatable_keys=114,115
 
 #common build.props
 PRODUCT_PROPERTY_OVERRIDES += \
