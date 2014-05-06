@@ -219,7 +219,7 @@
     </integer-array>
 
     <!-- Workaround for devices with broken keyboards -->
-    <bool name="config_forceDisableHardwareKeyboard">true</bool>
+    <!-- bool name="config_forceDisableHardwareKeyboard">true</bool> -->
 
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
@@ -242,7 +242,7 @@
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Panel auto-brightness configuration value -->
-    <integer name="config_panelAutoBrightnessValue">1</integer>
+    <!-- <integer name="config_panelAutoBrightnessValue">1</integer> -->
 
     <!-- True if the Irda service should be started at system start. This currently only
          supports Samsung Galaxy S4. -->
