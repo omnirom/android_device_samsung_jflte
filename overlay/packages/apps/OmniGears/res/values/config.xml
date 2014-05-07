@@ -23,4 +23,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
     <!-- Whether device has hardware buttons -->
     <bool name="config_has_hardware_buttons">true</bool>
 
+    <!-- Device has multi-color led -->
+    <bool name="config_has_multi_color_led" translatable="false">true</bool>
+
 </resources>
