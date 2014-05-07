@@ -173,7 +173,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libril-qc-qmi-1.so \
     keyguard.no_require_sim=true \
     media.aac_51_output_enabled=true \
-    mm.enable.smoothstreaming=true \
     persist.rild.nitz_plmn="" \
     persist.rild.nitz_long_ons_0="" \
     persist.rild.nitz_long_ons_1="" \
