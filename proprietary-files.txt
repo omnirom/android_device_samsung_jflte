@@ -1,6 +1,3 @@
-# Bins
-bin/mpdecision
-
 # Thermal
 bin/thermald
 bin/thermal-engine
