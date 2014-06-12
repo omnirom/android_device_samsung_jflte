@@ -133,3 +133,7 @@ TARGET_KERNEL_CONFIG         := jf_eur_defconfig
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jflte/releasetools
+
+# Bootpulse
+TARGET_MPDECISION_BOOST_SOCKET := /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+

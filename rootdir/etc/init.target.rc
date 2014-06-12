@@ -198,10 +198,6 @@ on post-fs-data
     chown system radio /sys/class/power_supply/battery/lte
     chown system radio /sys/class/power_supply/battery/wc_enable
 
-    #OTG Test
-    chown system radio /sys/class/host_notify/usb_otg/booster
-    chmod 0660 /sys/class/host_notify/usb_otg/booster
-
     # Permissions for Led
     chown system system /sys/class/sec/led/led_r
     chown system system /sys/class/sec/led/led_g
@@ -385,11 +381,6 @@ on property:qcom.thermal=thermald
     
 on property:qcom.thermal=thermal-engine
     start thermal-engine
-
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
-    user root
-    group root system
-    disabled
 
 service kickstart /system/bin/qcks -i /firmware-mdm/image/
     user root
