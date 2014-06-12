@@ -133,3 +133,6 @@ TARGET_KERNEL_CONFIG         := jf_eur_defconfig
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jflte/releasetools
+
+# Boostsocket
+TARGET_MPDECISION_BOOST_SOCKET := /dev/socket/mpdecision
