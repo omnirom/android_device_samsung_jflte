@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b713d8b_e8b83be4",
+        "filename": "audio/audio_policy.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000331
+      },
+      "writtenOn": "2014-07-10T20:50:41Z",
+      "side": 1,
+      "message": "I don\u0027t own the device, but didn\u0027t you make a typo right here? CALLA doesn\u0027t look okey.\n\nAUDIO_DEVICE_IN_VOICE_CALL|AUDIO_DEVICE_IN_BACK_MIC",
+      "revId": "80351005971d354128983a8d003693205d8f41fc",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
