@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b713d8b_68f98b49",
+        "filename": "audio/audio_policy.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2014-07-12T23:36:30Z",
+      "side": 1,
+      "message": "Shoudnt that be AUDIO_CHANNEL_IN_STEREO?",
+      "revId": "2c456aa2001ee1ce530b92ba9f4d41f08c479f28",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
