@@ -243,4 +243,6 @@
     <!-- Custom hardware button brightness -->
     <bool name="config_button_brightness_support">true</bool>
 
+    <bool name="config_lidControlsSleep">true</bool>
+
 </resources>
