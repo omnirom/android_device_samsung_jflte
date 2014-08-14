@@ -141,3 +141,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/jflte/releasetools
 
 # Smart Cover
 BOARD_HAS_EXTENDED_SWITCH := true
+
+# Use my hacky workaround temporarily
+# until the real fix is implemented
+SEPARATED_VOIP_SHORTCUT := true
