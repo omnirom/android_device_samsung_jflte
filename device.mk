@@ -185,6 +185,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril.v3=newDriverCall \
     dalvik.vm.dexopt-data-only=0
 
+# RIL
+    ro.telephony.ril_class=SamsungQualcommRIL
+
 # Smart Cover
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.switch_code.sw_lid=0x15 \
